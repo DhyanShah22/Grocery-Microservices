@@ -1,0 +1,22 @@
+const express = require('express')
+const {
+    getGrocery,
+    getSingleGrocery,
+    addGrocery,
+    updateGrocery,
+    deleteGrocery
+} = require('../Controllers/groController')
+
+const router = express.Router()
+
+router.get('/', getGrocery)
+
+router.get('/:id', getSingleGrocery)
+
+router.post('/', addGrocery)
+
+router.patch('/:id', updateGrocery)
+
+router.delete('/:id', deleteGrocery)
+
+module.exports = router
